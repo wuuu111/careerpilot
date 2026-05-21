@@ -1,6 +1,6 @@
 # CareerPilot
 
-![](docs/assets/image.png)
+![CareerPilot](docs/assets/image.png)
 
 CareerPilot is a multi-agent AI career application assistant for resume ingestion, JD analysis, matching, rewriting, cover letter generation, interview preparation, and agent trace observability.
 
