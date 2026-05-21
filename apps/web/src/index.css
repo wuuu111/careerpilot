@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #fdfbf5;
+  --paper-deep: #f4efe4;
+  --ink: #1a1a1a;
+  --ink-soft: #666666;
+  --ink-blue: #1d3a8a;
+  --line: rgba(26, 26, 26, 0.2);
+  --danger: #9f2339;
+  --warning: #805600;
+  --good: #0b735f;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(29, 58, 138, 0.05), transparent 35%),
+    radial-gradient(circle at right center, rgba(159, 35, 57, 0.04), transparent 30%),
+    linear-gradient(var(--paper), var(--paper));
+  font-family: "Inter", "SF Pro Text", system-ui, sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.editorial-serif {
+  font-family: "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
+}
+
+.mono-ui {
+  font-family: "JetBrains Mono", "SFMono-Regular", ui-monospace, monospace;
+}
+
+.paper-panel {
+  border: 1px solid var(--line);
+  background: rgba(253, 251, 245, 0.92);
+  box-shadow: 0 12px 32px rgba(26, 26, 26, 0.06);
+}

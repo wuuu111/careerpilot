@@ -1,0 +1,85 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#F4EEDF"/>
+  <rect x="48" y="48" width="1504" height="804" rx="24" fill="#FBF7EC" stroke="#16233B" stroke-width="4"/>
+  <rect x="96" y="104" width="372" height="220" rx="18" fill="#FFFDF8" stroke="#16233B" stroke-width="3"/>
+  <rect x="96" y="356" width="372" height="220" rx="18" fill="#FFFDF8" stroke="#16233B" stroke-width="3"/>
+  <rect x="96" y="608" width="372" height="180" rx="18" fill="#FFFDF8" stroke="#16233B" stroke-width="3"/>
+  <rect x="522" y="104" width="558" height="684" rx="22" fill="#F1E8D4" stroke="#16233B" stroke-width="3"/>
+  <rect x="1126" y="104" width="378" height="180" rx="18" fill="#FFFDF8" stroke="#16233B" stroke-width="3"/>
+  <rect x="1126" y="318" width="378" height="180" rx="18" fill="#FFFDF8" stroke="#16233B" stroke-width="3"/>
+  <rect x="1126" y="532" width="378" height="256" rx="18" fill="#FFFDF8" stroke="#16233B" stroke-width="3"/>
+
+  <text x="102" y="88" fill="#16233B" font-family="Georgia, Times New Roman, serif" font-size="48" font-weight="700">CareerPilot</text>
+  <text x="478" y="88" fill="#5A6B86" font-family="Courier New, monospace" font-size="20" letter-spacing="2">MULTI-AGENT CAREER WORKFLOW / RAG-READY / TRACEABLE OUTPUTS</text>
+
+  <text x="128" y="152" fill="#16233B" font-family="Courier New, monospace" font-size="24" font-weight="700">RESUME INGEST</text>
+  <text x="128" y="192" fill="#16233B" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">PDF / DOCX upload</text>
+  <text x="128" y="228" fill="#42516A" font-family="Arial, Helvetica, sans-serif" font-size="24">parse raw text</text>
+  <text x="128" y="264" fill="#42516A" font-family="Arial, Helvetica, sans-serif" font-size="24">extract structured skills</text>
+  <text x="128" y="300" fill="#42516A" font-family="Arial, Helvetica, sans-serif" font-size="24">store embedding-ready chunks</text>
+
+  <text x="128" y="404" fill="#16233B" font-family="Courier New, monospace" font-size="24" font-weight="700">JOB ANALYSIS</text>
+  <text x="128" y="444" fill="#16233B" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">JD + company context</text>
+  <text x="128" y="480" fill="#42516A" font-family="Arial, Helvetica, sans-serif" font-size="24">keywords and responsibilities</text>
+  <text x="128" y="516" fill="#42516A" font-family="Arial, Helvetica, sans-serif" font-size="24">retrieval context / company profile</text>
+  <text x="128" y="552" fill="#42516A" font-family="Arial, Helvetica, sans-serif" font-size="24">matching targets</text>
+
+  <text x="128" y="656" fill="#16233B" font-family="Courier New, monospace" font-size="24" font-weight="700">KNOWLEDGE LAYER</text>
+  <text x="128" y="696" fill="#16233B" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">pgvector / Chroma-ready</text>
+  <text x="128" y="732" fill="#42516A" font-family="Arial, Helvetica, sans-serif" font-size="24">normalized text + metadata</text>
+  <text x="128" y="768" fill="#42516A" font-family="Arial, Helvetica, sans-serif" font-size="24">retrieval boundaries kept explicit</text>
+
+  <text x="552" y="156" fill="#16233B" font-family="Courier New, monospace" font-size="24" font-weight="700">LANGGRAPH WORKFLOW</text>
+  <text x="552" y="206" fill="#16233B" font-family="Georgia, Times New Roman, serif" font-size="34" font-weight="700">Orchestrated agents, scored outputs, observable steps</text>
+
+  <rect x="552" y="250" width="228" height="76" rx="14" fill="#FFFDF8" stroke="#16233B" stroke-width="3"/>
+  <rect x="826" y="250" width="228" height="76" rx="14" fill="#FFFDF8" stroke="#16233B" stroke-width="3"/>
+  <rect x="552" y="362" width="228" height="76" rx="14" fill="#FFFDF8" stroke="#16233B" stroke-width="3"/>
+  <rect x="826" y="362" width="228" height="76" rx="14" fill="#FFFDF8" stroke="#16233B" stroke-width="3"/>
+  <rect x="552" y="474" width="228" height="76" rx="14" fill="#FFFDF8" stroke="#16233B" stroke-width="3"/>
+  <rect x="826" y="474" width="228" height="76" rx="14" fill="#FFFDF8" stroke="#16233B" stroke-width="3"/>
+  <rect x="552" y="586" width="502" height="118" rx="18" fill="#FFFDF8" stroke="#16233B" stroke-width="3"/>
+
+  <text x="584" y="296" fill="#16233B" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">ResumeParserAgent</text>
+  <text x="858" y="296" fill="#16233B" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">JDAnalyzerAgent</text>
+  <text x="596" y="408" fill="#16233B" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">MatchingAgent</text>
+  <text x="878" y="408" fill="#16233B" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">PlannerAgent</text>
+  <text x="584" y="520" fill="#16233B" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">Rewrite + CoverLetter</text>
+  <text x="864" y="520" fill="#16233B" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">Interview + Evaluation</text>
+  <text x="584" y="634" fill="#16233B" font-family="Georgia, Times New Roman, serif" font-size="30" font-weight="700">Every step recorded with citations, latency, status, and safe trace payloads</text>
+  <text x="584" y="678" fill="#42516A" font-family="Courier New, monospace" font-size="22">agent_steps / generated_outputs / compare / history / error envelope</text>
+
+  <text x="1158" y="152" fill="#16233B" font-family="Courier New, monospace" font-size="24" font-weight="700">OUTPUTS</text>
+  <text x="1158" y="196" fill="#16233B" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">matching report</text>
+  <text x="1158" y="232" fill="#42516A" font-family="Arial, Helvetica, sans-serif" font-size="24">rewritten resume</text>
+  <text x="1158" y="268" fill="#42516A" font-family="Arial, Helvetica, sans-serif" font-size="24">cover letter / interview prep</text>
+
+  <text x="1158" y="366" fill="#16233B" font-family="Courier New, monospace" font-size="24" font-weight="700">QUALITY</text>
+  <text x="1158" y="410" fill="#16233B" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">evaluation metrics</text>
+  <text x="1158" y="446" fill="#42516A" font-family="Arial, Helvetica, sans-serif" font-size="24">faithfulness / coverage / specificity</text>
+  <text x="1158" y="482" fill="#42516A" font-family="Arial, Helvetica, sans-serif" font-size="24">hallucination risk / readability</text>
+
+  <text x="1158" y="580" fill="#16233B" font-family="Courier New, monospace" font-size="24" font-weight="700">TRACE</text>
+  <text x="1158" y="624" fill="#16233B" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">observable, reviewable, deployable</text>
+  <text x="1158" y="660" fill="#42516A" font-family="Arial, Helvetica, sans-serif" font-size="24">FastAPI + React + Celery + Railway</text>
+  <text x="1158" y="696" fill="#42516A" font-family="Arial, Helvetica, sans-serif" font-size="24">cookie auth + CSRF + CORS policy</text>
+  <text x="1158" y="732" fill="#42516A" font-family="Arial, Helvetica, sans-serif" font-size="24">real smoke e2e and API contracts</text>
+
+  <path d="M470 214H520" stroke="#16233B" stroke-width="4" stroke-linecap="round"/>
+  <path d="M470 466H520" stroke="#16233B" stroke-width="4" stroke-linecap="round"/>
+  <path d="M470 700H520" stroke="#16233B" stroke-width="4" stroke-linecap="round"/>
+  <path d="M780 288H826" stroke="#16233B" stroke-width="4" stroke-linecap="round"/>
+  <path d="M780 400H826" stroke="#16233B" stroke-width="4" stroke-linecap="round"/>
+  <path d="M780 512H826" stroke="#16233B" stroke-width="4" stroke-linecap="round"/>
+  <path d="M1080 308H1126" stroke="#16233B" stroke-width="4" stroke-linecap="round"/>
+  <path d="M1080 644H1126" stroke="#16233B" stroke-width="4" stroke-linecap="round"/>
+
+  <circle cx="502" cy="214" r="8" fill="#16233B"/>
+  <circle cx="502" cy="466" r="8" fill="#16233B"/>
+  <circle cx="502" cy="700" r="8" fill="#16233B"/>
+  <circle cx="803" cy="288" r="8" fill="#16233B"/>
+  <circle cx="803" cy="400" r="8" fill="#16233B"/>
+  <circle cx="803" cy="512" r="8" fill="#16233B"/>
+  <circle cx="1103" cy="308" r="8" fill="#16233B"/>
+  <circle cx="1103" cy="644" r="8" fill="#16233B"/>
+</svg>

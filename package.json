@@ -1,0 +1,22 @@
+{
+  "name": "careerpilot",
+  "private": true,
+  "version": "0.1.0",
+  "description": "CareerPilot monorepo",
+  "type": "module",
+  "workspaces": [
+    "apps/web",
+    "packages/shared"
+  ],
+  "scripts": {
+    "web:dev": "npm --workspace apps/web run dev",
+    "web:build": "npm --workspace apps/web run build",
+    "web:test": "npm --workspace apps/web run test",
+    "e2e:smoke": "node tests/e2e/smoke.mjs",
+    "lint": "npm --workspace apps/web run lint",
+    "test": "npm run web:test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}

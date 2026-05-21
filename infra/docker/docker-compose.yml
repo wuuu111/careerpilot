@@ -1,0 +1,87 @@
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_DB: careerpilot
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d careerpilot"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+
+  migrate:
+    build:
+      context: ../..
+      dockerfile: apps/api/Dockerfile
+    environment: &careerpilot-env
+      CAREERPILOT_ENVIRONMENT: ${CAREERPILOT_ENVIRONMENT:-development}
+      CAREERPILOT_DATABASE_URL: ${CAREERPILOT_DATABASE_URL:-postgresql://postgres:postgres@db:5432/careerpilot}
+      CAREERPILOT_REDIS_URL: ${CAREERPILOT_REDIS_URL:-redis://redis:6379/0}
+      CAREERPILOT_JWT_SECRET: ${CAREERPILOT_JWT_SECRET:?set-a-random-secret-at-least-32-bytes-long}
+      CAREERPILOT_AUTH_COOKIE_NAME: ${CAREERPILOT_AUTH_COOKIE_NAME:-careerpilot_session}
+      CAREERPILOT_AUTH_CSRF_COOKIE_NAME: ${CAREERPILOT_AUTH_CSRF_COOKIE_NAME:-careerpilot_csrf_token}
+      CAREERPILOT_AUTH_CSRF_HEADER_NAME: ${CAREERPILOT_AUTH_CSRF_HEADER_NAME:-X-CSRF-Token}
+      CAREERPILOT_AUTH_COOKIE_SAMESITE: ${CAREERPILOT_AUTH_COOKIE_SAMESITE:-lax}
+      CAREERPILOT_AUTH_COOKIE_SECURE: ${CAREERPILOT_AUTH_COOKIE_SECURE:-false}
+      CAREERPILOT_DEEPSEEK_API_KEY: ${CAREERPILOT_DEEPSEEK_API_KEY:-}
+      CAREERPILOT_DEEPSEEK_BASE_URL: ${CAREERPILOT_DEEPSEEK_BASE_URL:-https://api.deepseek.com/v1}
+      CAREERPILOT_CORS_ORIGINS: ${CAREERPILOT_CORS_ORIGINS:-[]}
+      CAREERPILOT_CORS_ORIGIN_REGEX: ${CAREERPILOT_CORS_ORIGIN_REGEX:-^https?://(localhost|127\\.0\\.0\\.1)(:\\d+)?$}
+      CAREERPILOT_CELERY_TASK_ALWAYS_EAGER: ${CAREERPILOT_CELERY_TASK_ALWAYS_EAGER:-false}
+    command: ["alembic", "upgrade", "head"]
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  api:
+    build:
+      context: ../..
+      dockerfile: apps/api/Dockerfile
+    environment: *careerpilot-env
+    command: ["uvicorn", "careerpilot.api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health')\""]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+
+  worker:
+    build:
+      context: ../..
+      dockerfile: apps/worker/Dockerfile
+    environment: *careerpilot-env
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  postgres-data:
