@@ -5,8 +5,9 @@ import process from "node:process";
 import { spawn, spawnSync } from "node:child_process";
 
 import { chromium } from "playwright";
+import { resolveWorkspaceRoot } from "./paths.mjs";
 
-const workspaceRoot = "/Users/wuuu/Downloads/careerpilot";
+const workspaceRoot = resolveWorkspaceRoot(import.meta.url);
 const apiPort = 8012;
 const webPort = 4177;
 const apiBaseUrl = `http://127.0.0.1:${apiPort}`;

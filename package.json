@@ -12,6 +12,7 @@
     "web:dev": "npm --workspace apps/web run dev",
     "web:build": "npm --workspace apps/web run build",
     "web:test": "npm --workspace apps/web run test",
+    "e2e:test": "node --test tests/e2e/paths.test.mjs",
     "e2e:smoke": "node tests/e2e/smoke.mjs",
     "lint": "npm --workspace apps/web run lint",
     "test": "npm run web:test"

@@ -78,5 +78,8 @@ jobs:
       - name: Install Playwright Chromium
         run: npx playwright install --with-deps chromium
 
+      - name: E2E path test
+        run: npm run e2e:test
+
       - name: E2E smoke
         run: npm run e2e:smoke
